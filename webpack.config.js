@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 let FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
+  entry: "./src/index.js",   // entry point
   module: {
     rules: [
       {

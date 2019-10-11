@@ -2,7 +2,6 @@
   "name": "reactapp",
   "version": "1.0.0",
   "description": "React App",
-  "main": "index.js",
   "author": "Ossama",
   "license": "MIT",
   "scripts": {
