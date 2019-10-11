@@ -1,8 +1,18 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 let FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",   // entry point
+  entry: "./src/index.tsx",   // entry point
+  devtool: "source-map",
+  resolve: {
+    // Ajoute '.ts' et'.tsx' aux extensions traitées
+    extensions: [".ts", ".tsx", ".js", ".json"]
+  },
+  output: {
+    path: path.join(__dirname, "/dist"),
+    filename: "index_bundle.js"
+  },
   module: {
     rules: [
       {
@@ -34,6 +44,10 @@ module.exports = {
                 outputPath: './assets/',
             }
         }]
+      },
+      { 
+        test: /\.tsx?$/, 
+        loader: "awesome-typescript-loader"
       }
     ]
   },
